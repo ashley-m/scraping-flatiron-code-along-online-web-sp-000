@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 
 require_relative './course.rb'
 
@@ -19,9 +20,11 @@ class Scraper
   def self.make_courses
   end
 
-  def get_page(link)
-    html = open(link)
-    doc = Nokogiri::HTML(html)
+  def get_page
+    doc = Nokogiri::HTML(open(http://learn-co-curriculum.github.io/site-for-scraping/courses))
+    binding.pry
   end
 
 end
+
+Scraper.new.get_page
